@@ -62,7 +62,8 @@ function playRound(playerSelection, computerSelection){
     // tie condition
     if (playerSelection === computerSelection) {
         return 'It\'s a tie!';
-    } else if (playerSelection === 'rock' && computerSelection === 'paper'){
+    } // all other conditions
+    else if (playerSelection === 'rock' && computerSelection === 'paper'){
         return 'You lose! Paper beats Rock';
     } else if (playerSelection === 'rock' && computerSelection === 'scissors'){
         return 'You win! Rock beats Scissors';
@@ -74,13 +75,15 @@ function playRound(playerSelection, computerSelection){
         return 'You lose! Rock beats scissors';
     } else if (playerSelection === 'scissors' && computerSelection === 'paper'){
         return 'You win! Scissors beats paper';
-    } else {
-        return 'try again';
+    } // consider typos
+    else {
+        return 'error, try again';
     }
 }
 
 // declare playerSelection and computerSelection
-const playerSelection = prompt('Rock, paper, scissors, GO!').toLowerCase();
+// note: need a condition for cancel button or exit -> reading null error for toLowerCase()
+const playerSelection = prompt('Rock, Paper, Scissors, GO!').toLowerCase();
 const computerSelection = getComputerChoice();
 console.log(`Computer chose: ${computerSelection}`);
 console.log(playRound(playerSelection, computerSelection));
