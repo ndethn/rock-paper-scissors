@@ -104,14 +104,26 @@ console.log(playRound(playerSelection, computerSelection));
 - each iteration display the win/lose string
 - once loop is done -> print the winner between computer and user
 
+
+
 */
 
 // declare function game()
 function game() {
     // for loop to run 5 rounds
+    // initialize rounds to 0
+    let numRounds = 0;
     for (let i = 0; i < 5; i++){
         // code block to call the playRound function
-        
-        return prompt('Rock, Paper, Scissors, GO!').toLowerCase();
+        // increment each round by 1 to total 5
+        numRounds += 1;
+        console.log(numRounds); // prints 1,2,3,4,5
+        if (numRounds === 5){
+            console.log('Game done!');
+        } else {
+            console.log('Next round');
+        }
     }
+    return numRounds;
 }
+console.log(game()); // prints 5
