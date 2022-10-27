@@ -87,3 +87,20 @@ const playerSelection = prompt('Rock, Paper, Scissors, GO!').toLowerCase();
 const computerSelection = getComputerChoice();
 console.log(`Computer chose: ${computerSelection}`);
 console.log(playRound(playerSelection, computerSelection));
+
+
+/* declare new function called game()
+- call playRound function inside of game() function
+- plays 5 rounds -> loop
+- keeps score in a variable
+- reports a winner or loser at the end based on score
+- use a for loop
+*/
+
+// declare function game()
+function game() {
+    // for loop to run 5 rounds
+    for (let i = 0; i < 5; i++){
+        // code block to call the playRound function
+    }
+}
