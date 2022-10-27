@@ -86,6 +86,7 @@ function playRound(playerSelection, computerSelection){
 const playerSelection = prompt('Rock, Paper, Scissors, GO!').toLowerCase();
 const computerSelection = getComputerChoice();
 console.log(`Computer chose: ${computerSelection}`);
+console.log(`You chose: ${playerSelection}`);
 console.log(playRound(playerSelection, computerSelection));
 
 
@@ -95,6 +96,14 @@ console.log(playRound(playerSelection, computerSelection));
 - keeps score in a variable
 - reports a winner or loser at the end based on score
 - use a for loop
+
+- declare the function game
+- create for loop to run 5 rounds
+- within each iteration -> run the playRound function
+- run the iteration until i < 5 for total 5 rounds
+- each iteration display the win/lose string
+- once loop is done -> print the winner between computer and user
+
 */
 
 // declare function game()
@@ -102,5 +111,7 @@ function game() {
     // for loop to run 5 rounds
     for (let i = 0; i < 5; i++){
         // code block to call the playRound function
+        
+        return prompt('Rock, Paper, Scissors, GO!').toLowerCase();
     }
 }
