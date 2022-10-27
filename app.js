@@ -10,3 +10,6 @@ begin with a function getComputerChoice()
 
 
 *****/
+
+let choices = ['rock', 'paper', 'scissors'];
+console.log(choices);
