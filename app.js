@@ -103,9 +103,6 @@ console.log(playRound(playerSelection, computerSelection));
 - run the iteration until i < 5 for total 5 rounds
 - each iteration display the win/lose string
 - once loop is done -> print the winner between computer and user
-
-
-
 */
 
 // declare function game()
@@ -124,6 +121,9 @@ function game() {
             console.log('Next round');
         }
     }
+    // playRound(playerSelection,computerSelection);
+    // console.log(playRound(playerSelection,computerSelection));
     return numRounds;
 }
 console.log(game()); // prints 5
+// console.log(playRound(playerSelection, computerSelection));
