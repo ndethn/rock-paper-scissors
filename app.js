@@ -12,11 +12,11 @@ begin with a function getComputerChoice()
 *****/
 
 // declare choices array
-let choices = ['rock', 'paper', 'scissors'];
+const choices = ['rock', 'paper', 'scissors'];
 console.log(choices);
 
 // declare computer choice function
 function getComputerChoice() {
-    let randChoice = Math.floor(Math.random(choices) * choices.length);
-    return randChoice;
+    const randChoice = Math.floor(Math.random() * choices.length);
+    return choices[randChoice];
 }
