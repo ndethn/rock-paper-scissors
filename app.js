@@ -154,7 +154,9 @@ function game() {
 game();
 
 // condition for the winner
-if (playerScore > computerScore){
+if (playerScore === computerScore) {
+    console.log(`It's a tie!`);
+} else if (playerScore > computerScore) {
     console.log(`You win!`);
 } else {
     console.log(`You lose..`);
