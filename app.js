@@ -59,7 +59,7 @@ into all lowercase: toLowerCase()
 // declare score variables
 let playerScore = 0;
 let computerScore = 0;
-console.log(playerScore, computerScore);
+// console.log(playerScore, computerScore);
 
 
 // testing the playRound function
@@ -153,9 +153,22 @@ function game() {
 }
 game();
 
+// condition for the winner
+if (playerScore > computerScore){
+    console.log(`You win!`);
+} else {
+    console.log(`You lose..`);
+}
+
 /* how to keep score
 - each round is based on a condition playSelection vs computerSelection
 - base this off of the return value from the if statement above
 - could easily add code into each of the if statements
 - create variables for playerScore and computerScore using let
+*/
+
+/*
+reporting a winner:
+- compare the playerScore to the computerScore
+- whicher is greater than the other, returns as winner
 */
