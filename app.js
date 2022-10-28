@@ -56,6 +56,11 @@ into all lowercase: toLowerCase()
 - declare computerSelection equal to the function getComputerChoice()
 
 */
+// declare score variables
+let playerScore = 0;
+let computerScore = 0;
+console.log(playerScore, computerScore);
+
 
 // testing the playRound function
 function playRound(playerSelection, computerSelection) {
@@ -64,16 +69,22 @@ function playRound(playerSelection, computerSelection) {
         return 'It\'s a tie!';
     } // all other conditions
     else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        computerScore += 1;
         return 'You lose! Paper beats Rock';
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        playerScore += 1;
         return 'You win! Rock beats Scissors';
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        computerScore += 1;
         return 'You lose! Scissors beats Paper';
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        playerScore += 1;
         return 'You win! Paper beats rock';
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        computerScore += 1;
         return 'You lose! Rock beats scissors';
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        playerScore += 1;
         return 'You win! Scissors beats paper';
     } // consider typos
     else {
@@ -137,6 +148,14 @@ function game() {
         console.log(`Computer chose: ${computerSelection}`);
         console.log(`You chose: ${playerSelection}`);
         console.log(playRound(playerSelection, computerSelection));
+        console.log(`Your score: ${playerScore} , Computer's score: ${computerScore}`);
     }
 }
 game();
+
+/* how to keep score
+- each round is based on a condition playSelection vs computerSelection
+- base this off of the return value from the if statement above
+- could easily add code into each of the if statements
+- create variables for playerScore and computerScore using let
+*/
