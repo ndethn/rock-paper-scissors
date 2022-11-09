@@ -68,39 +68,47 @@ function playRound(playerSelection, computerSelection) {
 const btnR = document.getElementById('btnR');
 const btnP = document.getElementById('btnP');
 const btnS = document.getElementById('btnS');
+const choiceContainer = document.getElementById('choice');
+const scoreContainer = document.getElementById('score');
 
 // add event to each button: rock, paper, scissors
 // calling the playRound function for each
 btnR.addEventListener('click', () => {
     playerSelection = 'rock';
     computerSelection = getComputerChoice();
-    playRound();
-    console.log(`You chose: ${playerSelection}, Computer chose: ${computerSelection}`);
+    playRound(playerSelection, computerSelection);
+    choiceContainer.textContent = ` `;
+    choiceContainer.textContent += `You chose: ${playerSelection}, Computer chose: ${computerSelection}`;
+    scoreContainer.textContent = `Your score: ${playerScore} , Computer's score: ${computerScore}`;
 });
 
 btnP.addEventListener('click', () => {
     playerSelection = 'paper';
     computerSelection = getComputerChoice();
-    playRound();
-    console.log(`You chose: ${playerSelection}, Computer chose: ${computerSelection}`);
+    playRound(playerSelection, computerSelection);
+    choiceContainer.textContent = ` `;
+    choiceContainer.textContent += `You chose: ${playerSelection}, Computer chose: ${computerSelection}`;
+    scoreContainer.textContent = `Your score: ${playerScore} , Computer's score: ${computerScore}`;
 });
 
 btnS.addEventListener('click', () => {
     playerSelection = 'scissors';
     computerSelection = getComputerChoice();
-    playRound();
-    console.log(`You chose: ${playerSelection}, Computer chose: ${computerSelection}`);
+    playRound(playerSelection, computerSelection);
+    choiceContainer.textContent = ` `;
+    choiceContainer.textContent += `You chose: ${playerSelection}, Computer chose: ${computerSelection}`;
+    scoreContainer.textContent = `Your score: ${playerScore} , Computer's score: ${computerScore}`;
 });
 
 
 
 //condition for the winner
 // if (playerScore === computerScore) {
-//     console.log(`It's a tie!`);
+//     choiceContainer.textContent += `It's a tie!`;
 // } else if (playerScore > computerScore) {
-//     console.log(`You win!`);
+//     choiceContainer.textContent += `You win!`;
 // } else {
-//     console.log(`You lose..`);
+//     choiceContainer.textContent += `You lose..`;
 // }
 
 // end game
