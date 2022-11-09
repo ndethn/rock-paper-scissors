@@ -58,7 +58,7 @@ function playRound(playerSelection, computerSelection) {
 //     }
 // }
 // run game
-game();
+// game();
 
 // condition for the winner
 if (playerScore === computerScore) {
