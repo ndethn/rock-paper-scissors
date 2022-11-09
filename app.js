@@ -1,4 +1,5 @@
 // rock paper scissors project by ande10 - 10.28.2022
+// feature branch: add ui - 11.08.2022
 
 // declare choices array
 const choices = ['rock', 'paper', 'scissors'];
@@ -64,15 +65,19 @@ function playRound(playerSelection, computerSelection) {
 // each button calls the playRound function with
 // the corresponding playerSelection
 
-const btnR = document.getElementById('btnR').addEventListener('click', playRound);
+const btnR = document.getElementById('btnR');
+const playerChoiceRock = () => {
+    console.log('you chose rock');
+}
+btnR.addEventListener('click', playerChoiceRock);
 
 // condition for the winner
-if (playerScore === computerScore) {
-    console.log(`It's a tie!`);
-} else if (playerScore > computerScore) {
-    console.log(`You win!`);
-} else {
-    console.log(`You lose..`);
-}
+// if (playerScore === computerScore) {
+//     console.log(`It's a tie!`);
+// } else if (playerScore > computerScore) {
+//     console.log(`You win!`);
+// } else {
+//     console.log(`You lose..`);
+// }
 
 // end game
