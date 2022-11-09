@@ -45,43 +45,27 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// declare the game function with a for loop (5 game rounds)
-// function game() {
-//     for (let i = 0; i < 5; i++) {
-//         const playerSelection = prompt('Rock, Paper, Scissors, GO!').toLowerCase();
-//         const computerSelection = getComputerChoice();
-//         // print roundd, both choices, winner of specific round, and overall score
-//         console.log(`Round ${i + 1}`);
-//         console.log(`Computer chose: ${computerSelection}`);
-//         console.log(`You chose: ${playerSelection}`);
-//         console.log(playRound(playerSelection, computerSelection));
-//         console.log(`Your score: ${playerScore} , Computer's score: ${computerScore}`);
-//     }
-// }
-// // run game
-// game();
-
-// event listener to the buttons
-// each button calls the playRound function with
-// the corresponding playerSelection
-
+// declare variables for referencing html elements
 const btnR = document.getElementById('btnR');
 const btnP = document.getElementById('btnP');
 const btnS = document.getElementById('btnS');
 const choiceContainer = document.getElementById('choice');
 const scoreContainer = document.getElementById('score');
 const resultContainer = document.getElementById('result');
+const winnerContainer = document.getElementById('winner');
 
-// add event to each button: rock, paper, scissors
-// calling the playRound function for each
+// create DOM events with each button and displaying results
 btnR.addEventListener('click', () => {
     playerSelection = 'rock';
     computerSelection = getComputerChoice();
+    // run the play round function for conditions
     const round = playRound(playerSelection, computerSelection);
     choiceContainer.textContent = ` `;
     resultContainer.textContent = `${round}`;
     choiceContainer.textContent += `You chose: ${playerSelection}, Computer chose: ${computerSelection}`;
     scoreContainer.textContent = `Your score: ${playerScore} , Computer's score: ${computerScore}`;
+    // run the check winner function for 5 points
+    checkWinner(playerScore, computerScore);
 });
 
 btnP.addEventListener('click', () => {
@@ -92,6 +76,7 @@ btnP.addEventListener('click', () => {
     resultContainer.textContent = `${round}`;
     choiceContainer.textContent += `You chose: ${playerSelection}, Computer chose: ${computerSelection}`;
     scoreContainer.textContent = `Your score: ${playerScore} , Computer's score: ${computerScore}`;
+    checkWinner(playerScore, computerScore);
 });
 
 btnS.addEventListener('click', () => {
@@ -102,44 +87,25 @@ btnS.addEventListener('click', () => {
     resultContainer.textContent = `${round}`;
     choiceContainer.textContent += `You chose: ${playerSelection}, Computer chose: ${computerSelection}`;
     scoreContainer.textContent = `Your score: ${playerScore} , Computer's score: ${computerScore}`;
+    checkWinner(playerScore, computerScore);
 });
 
-
-//condition for the winner
-// if (playerScore === computerScore) {
-//     choiceContainer.textContent += `It's a tie!`;
-// } else if (playerScore > computerScore) {
-//     choiceContainer.textContent += `You win!`;
-// } else {
-//     choiceContainer.textContent += `You lose..`;
-// }
-
-// condition for the winner
-// if (playerScore === 5) {
-//     choiceContainer.textContent = ` `;
-//     resultContainer.textContent = `You win the game!`;
-//     scoreContainer.textContent = ` `;
-// } else if (computerScore === 5) {
-//     choiceContainer.textContent = ` `;
-//     resultContainer.textContent = `You lost...`;
-//     scoreContainer.textContent = ` `;
-// } else {
-//     choiceContainer.textContent = ` `;
-//     resultContainer.textContent = `Tie game!`;
-//     scoreContainer.textContent = ` `;
-// }
-
-// function checkWinner() {
-//     if (playerScore === 5 || computerScore === 5) {
-//         if (playerScore === computerScore) {
-//             resultContainer.textContent = `It's a tie game`;
-//         } else {
-//             let winner = `${(playerScore > computerScore) ?
-//                 resultContainer.textContent = `You win!` :
-//                 resultContainer.textContent = ` You lost...`}`;
-//                 resultContainer.textContent = winner;
-//         }
-//     }
-// }
-
-// end game
+// check the winner based on 5 points and disable buttons for
+// visibility of game ending
+function checkWinner(playerScore, computerScore) {
+    if (playerScore === 5) {
+        resultContainer.textContent = ` `;
+        choiceContainer.textContent = ` `;
+        resultContainer.textContent = `You win the game!`;
+        btnR.disabled = true;
+        btnP.disabled = true;
+        btnS.disabled = true;
+    } else if (computerScore === 5) {
+        resultContainer.textContent = ` `;
+        choiceContainer.textContent = ` `;
+        resultContainer.textContent = `You lose.. Refresh page to play again`;
+        btnR.disabled = true;
+        btnP.disabled = true;
+        btnS.disabled = true;
+    }
+}
