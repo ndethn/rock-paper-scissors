@@ -45,18 +45,18 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // declare the game function with a for loop (5 game rounds)
-function game() {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt('Rock, Paper, Scissors, GO!').toLowerCase();
-        const computerSelection = getComputerChoice();
-        // print road, both choices, winner of specific round, and overall score
-        console.log(`Round ${i + 1}`);
-        console.log(`Computer chose: ${computerSelection}`);
-        console.log(`You chose: ${playerSelection}`);
-        console.log(playRound(playerSelection, computerSelection));
-        console.log(`Your score: ${playerScore} , Computer's score: ${computerScore}`);
-    }
-}
+// function game() {
+//     for (let i = 0; i < 5; i++) {
+//         const playerSelection = prompt('Rock, Paper, Scissors, GO!').toLowerCase();
+//         const computerSelection = getComputerChoice();
+//         // print road, both choices, winner of specific round, and overall score
+//         console.log(`Round ${i + 1}`);
+//         console.log(`Computer chose: ${computerSelection}`);
+//         console.log(`You chose: ${playerSelection}`);
+//         console.log(playRound(playerSelection, computerSelection));
+//         console.log(`Your score: ${playerScore} , Computer's score: ${computerScore}`);
+//     }
+// }
 // run game
 game();
 
