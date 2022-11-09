@@ -66,8 +66,27 @@ function playRound(playerSelection, computerSelection) {
 // the corresponding playerSelection
 
 const btnR = document.getElementById('btnR');
+const btnP = document.getElementById('btnP');
+const btnS = document.getElementById('btnS');
+
+// add event to each button: rock, paper, scissors
+// calling the playRound function for each
 btnR.addEventListener('click', () => {
     playerSelection = 'rock';
+    computerSelection = getComputerChoice();
+    playRound();
+    console.log(`You chose: ${playerSelection}, Computer chose: ${computerSelection}`);
+});
+
+btnP.addEventListener('click', () => {
+    playerSelection = 'paper';
+    computerSelection = getComputerChoice();
+    playRound();
+    console.log(`You chose: ${playerSelection}, Computer chose: ${computerSelection}`);
+});
+
+btnS.addEventListener('click', () => {
+    playerSelection = 'scissors';
     computerSelection = getComputerChoice();
     playRound();
     console.log(`You chose: ${playerSelection}, Computer chose: ${computerSelection}`);
