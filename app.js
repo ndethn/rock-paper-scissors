@@ -70,14 +70,16 @@ const btnP = document.getElementById('btnP');
 const btnS = document.getElementById('btnS');
 const choiceContainer = document.getElementById('choice');
 const scoreContainer = document.getElementById('score');
+const resultContainer = document.getElementById('result');
 
 // add event to each button: rock, paper, scissors
 // calling the playRound function for each
 btnR.addEventListener('click', () => {
     playerSelection = 'rock';
     computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+    const round = playRound(playerSelection, computerSelection);
     choiceContainer.textContent = ` `;
+    resultContainer.textContent = `${round}`;
     choiceContainer.textContent += `You chose: ${playerSelection}, Computer chose: ${computerSelection}`;
     scoreContainer.textContent = `Your score: ${playerScore} , Computer's score: ${computerScore}`;
 });
@@ -85,8 +87,9 @@ btnR.addEventListener('click', () => {
 btnP.addEventListener('click', () => {
     playerSelection = 'paper';
     computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+    const round = playRound(playerSelection, computerSelection);
     choiceContainer.textContent = ` `;
+    resultContainer.textContent = `${round}`;
     choiceContainer.textContent += `You chose: ${playerSelection}, Computer chose: ${computerSelection}`;
     scoreContainer.textContent = `Your score: ${playerScore} , Computer's score: ${computerScore}`;
 });
@@ -94,8 +97,9 @@ btnP.addEventListener('click', () => {
 btnS.addEventListener('click', () => {
     playerSelection = 'scissors';
     computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+    const round = playRound(playerSelection, computerSelection);
     choiceContainer.textContent = ` `;
+    resultContainer.textContent = `${round}`;
     choiceContainer.textContent += `You chose: ${playerSelection}, Computer chose: ${computerSelection}`;
     scoreContainer.textContent = `Your score: ${playerScore} , Computer's score: ${computerScore}`;
 });
