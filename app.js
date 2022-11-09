@@ -60,15 +60,11 @@ function playRound(playerSelection, computerSelection) {
 // // run game
 // game();
 
-// run the game
-const playerSelection = prompt('Rock, Paper, Scissors, GO!').toLowerCase();
-const computerSelection = getComputerChoice();
-// print roundd, both choices, winner of specific round, and overall score
-console.log(`Computer chose: ${computerSelection}`);
-console.log(`You chose: ${playerSelection}`);
-console.log(playRound(playerSelection, computerSelection));
-console.log(`Your score: ${playerScore} , Computer's score: ${computerScore}`);
+// event listener to the buttons
+// each button calls the playRound function with
+// the corresponding playerSelection
 
+const btnR = document.getElementById('btnR').addEventListener('click', playRound);
 
 // condition for the winner
 if (playerScore === computerScore) {
