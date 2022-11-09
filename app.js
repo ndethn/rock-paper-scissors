@@ -105,7 +105,6 @@ btnS.addEventListener('click', () => {
 });
 
 
-
 //condition for the winner
 // if (playerScore === computerScore) {
 //     choiceContainer.textContent += `It's a tie!`;
@@ -113,6 +112,34 @@ btnS.addEventListener('click', () => {
 //     choiceContainer.textContent += `You win!`;
 // } else {
 //     choiceContainer.textContent += `You lose..`;
+// }
+
+// condition for the winner
+// if (playerScore === 5) {
+//     choiceContainer.textContent = ` `;
+//     resultContainer.textContent = `You win the game!`;
+//     scoreContainer.textContent = ` `;
+// } else if (computerScore === 5) {
+//     choiceContainer.textContent = ` `;
+//     resultContainer.textContent = `You lost...`;
+//     scoreContainer.textContent = ` `;
+// } else {
+//     choiceContainer.textContent = ` `;
+//     resultContainer.textContent = `Tie game!`;
+//     scoreContainer.textContent = ` `;
+// }
+
+// function checkWinner() {
+//     if (playerScore === 5 || computerScore === 5) {
+//         if (playerScore === computerScore) {
+//             resultContainer.textContent = `It's a tie game`;
+//         } else {
+//             let winner = `${(playerScore > computerScore) ?
+//                 resultContainer.textContent = `You win!` :
+//                 resultContainer.textContent = ` You lost...`}`;
+//                 resultContainer.textContent = winner;
+//         }
+//     }
 // }
 
 // end game
