@@ -49,7 +49,7 @@ function playRound(playerSelection, computerSelection) {
 //     for (let i = 0; i < 5; i++) {
 //         const playerSelection = prompt('Rock, Paper, Scissors, GO!').toLowerCase();
 //         const computerSelection = getComputerChoice();
-//         // print road, both choices, winner of specific round, and overall score
+//         // print roundd, both choices, winner of specific round, and overall score
 //         console.log(`Round ${i + 1}`);
 //         console.log(`Computer chose: ${computerSelection}`);
 //         console.log(`You chose: ${playerSelection}`);
@@ -57,8 +57,18 @@ function playRound(playerSelection, computerSelection) {
 //         console.log(`Your score: ${playerScore} , Computer's score: ${computerScore}`);
 //     }
 // }
-// run game
+// // run game
 // game();
+
+// run the game
+const playerSelection = prompt('Rock, Paper, Scissors, GO!').toLowerCase();
+const computerSelection = getComputerChoice();
+// print roundd, both choices, winner of specific round, and overall score
+console.log(`Computer chose: ${computerSelection}`);
+console.log(`You chose: ${playerSelection}`);
+console.log(playRound(playerSelection, computerSelection));
+console.log(`Your score: ${playerScore} , Computer's score: ${computerScore}`);
+
 
 // condition for the winner
 if (playerScore === computerScore) {
