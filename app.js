@@ -66,12 +66,16 @@ function playRound(playerSelection, computerSelection) {
 // the corresponding playerSelection
 
 const btnR = document.getElementById('btnR');
-const playerChoiceRock = () => {
-    console.log('you chose rock');
-}
-btnR.addEventListener('click', playerChoiceRock);
+btnR.addEventListener('click', () => {
+    playerSelection = 'rock';
+    computerSelection = getComputerChoice();
+    playRound();
+    console.log(`You chose: ${playerSelection}, Computer chose: ${computerSelection}`);
+});
 
-// condition for the winner
+
+
+//condition for the winner
 // if (playerScore === computerScore) {
 //     console.log(`It's a tie!`);
 // } else if (playerScore > computerScore) {
